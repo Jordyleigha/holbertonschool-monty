@@ -39,3 +39,8 @@ typedef struct instruction_s
 
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
+
+void set_op_tok_error(int error_code);
+
+
+int malloc_error(void);
