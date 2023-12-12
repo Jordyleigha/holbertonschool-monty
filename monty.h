@@ -1,8 +1,12 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef __MONTY_H__
+#define __MONTY_H__
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#define STACK 0
+#define QUEUE
+#define DELIMS " \n\t\a\b"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
