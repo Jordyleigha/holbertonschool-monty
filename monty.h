@@ -1,9 +1,10 @@
-#ifndef __MONTY_H__
-#define __MONTY_H__
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #define STACK 0
 #define QUEUE
 #define DELIMS " \n\t\a\b"
