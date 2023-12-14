@@ -1,9 +1,15 @@
 #include "monty.h"
 
-/** 
- * monty_push - pushes a value to a stack_t linked list
- * @stack: a pointer to the top node of a slack_t linked list
- * @line_number: the current working line number of a monty bytecodes file
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
+void monty_pint(stack_t **stack, unsigned int line_number);
+void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
+
+/**
+ * monty_push - Pushes a value to a stack_t linked list.
+ * @stack: A pointer to the top mode node of a stack_t linked list.
+ * @line_number: The current working line number of a Monty bytecodes file.
  */
 void monty_push(stack_t **stack, unsigned int line_number)
 {
@@ -35,7 +41,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 	}
 	new->n = atoi(op_toks[1]);
 
-	if (check_mode(*stack) == STACK)
+	if (check_mode(*stack) == STACK) /* STACK mode insert at front */
 	{
 		tmp = (*stack)->next;
 		new->prev = *stack;
@@ -44,7 +50,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 			tmp->prev = new;
 		(*stack)->next = new;
 	}
-	else
+	else /* QUEUE mode insert at end */
 	{
 		tmp = *stack;
 		while (tmp->next)
